@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="login">Login</string>
+    <string name="app_name">TwittApp</string>
+    <string name="labelTweets">Last tweets</string>
+    <string name="buttonPost">Post</string>
+    <string name="writeText">Write text</string>
+    <string name="writerName">name</string>
+    <string name="buttonTweet">Tweet</string>
+    <string name="buttonCancel">Cancel</string>
+    <string name="buttonClear">Clear</string>
+
+</resources>
