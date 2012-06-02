@@ -30,8 +30,9 @@
     <ListView 
         android:id="@android:id/list"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:divider="#f3f3f3"
+        android:dividerHeight="2dp" >
     </ListView>
-    
     
 </LinearLayout>
