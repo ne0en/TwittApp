@@ -20,7 +20,7 @@ public class TwittAppActivity extends Activity {
     Twitter twitter;
 	
     private static String TAG = "TwittApp";
-    
+    /** Change CONSUMER_KEY and CONSUMER_SECRET */
     private static String CONSUMER_KEY = "B1VVyQKZNU1B3djHT4WNA";
     private static String CONSUMER_SECRET = "P660Y2DvDxDeJ6r6U4hl9Wflig19b92kU4nGsrH1G0";
     private static String CALLBACK_URL = "x-feelit://callback";
