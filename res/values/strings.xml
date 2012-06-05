@@ -10,5 +10,7 @@
     <string name="buttonTweet">Tweet</string>
     <string name="buttonCancel">Cancel</string>
     <string name="buttonClear">Clear</string>
+    <string name="buttonReplay">Replay</string>
+    <string name="buttonRetweet">Retweet</string>
 
 </resources>
