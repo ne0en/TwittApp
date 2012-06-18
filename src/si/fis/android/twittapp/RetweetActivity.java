@@ -31,7 +31,7 @@ public class RetweetActivity extends Activity implements OnClickListener {
 		String param1 = bundle.getString("param1");
 		String param2 = bundle.getString("param2");
 		stID = bundle.getLong("param3");
-		uID = bundle.getLong("param4");
+		
 		vnosnoPolje = (EditText) findViewById(R.id.vnosP);
 		vnosnoPolje.setText(param1);
 		
@@ -69,8 +69,8 @@ public class RetweetActivity extends Activity implements OnClickListener {
 		case R.id.buttonReply:
 			try {
 				
-				twitter.updateStatus(new StatusUpdate("@"+ime.getText().toString()+" "+vnosnoPolje.getText()).inReplyToStatusId(uID));
-				Toast.makeText(this, ime.getText() + " selected", Toast.LENGTH_LONG).show();
+				twitter.updateStatus(new StatusUpdate("@"+ime.getText().toString()+" "+vnosnoPolje.getText()).inReplyToStatusId(stID));
+				Toast.makeText(this, stID + " selected", Toast.LENGTH_LONG).show();
 				 
 			} catch (TwitterException e) {
 				// TODO Auto-generated catch block

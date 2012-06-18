@@ -49,7 +49,6 @@ public class TweetsActivity extends ListActivity implements OnClickListener {
 		bundle.putString("param1", status.getText());
 		bundle.putString("param2", status.getUser().getScreenName());
 		bundle.putLong("param3", status.getId());
-		bundle.putLong("param4", status.getInReplyToStatusId());
 
 		Intent newIntent = new Intent(this.getApplicationContext(), RetweetActivity.class);
 		newIntent.putExtras(bundle);
