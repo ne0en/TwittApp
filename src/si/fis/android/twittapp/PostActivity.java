@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class PostActivity extends Activity implements OnClickListener {
 	Button buttonTweet;
 	Button buttonCancel;
 	Button buttonClear;
+	TextView myName;
 	private EditText vnosnoPolje;
 	Twitter twitter;
 
@@ -32,6 +34,17 @@ public class PostActivity extends Activity implements OnClickListener {
 		
 		buttonCancel = (Button) findViewById(R.id.buttonCancel);
 		buttonCancel.setOnClickListener(this);
+		
+		myName = (TextView) findViewById(R.id.myName);
+		try {
+			myName.setText(twitter.getScreenName());
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TwitterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

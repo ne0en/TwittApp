@@ -5,6 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/ime"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -40,11 +41,11 @@
             android:text="@string/buttonRetweet" />
         
         <Button
-            android:id="@+id/buttonReplay"
+            android:id="@+id/buttonReply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/buttonReplay" />
+            android:text="@string/buttonReply" />
 
         <Button
             android:id="@+id/buttonCancel"

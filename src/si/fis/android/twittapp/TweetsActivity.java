@@ -1,6 +1,7 @@
 package si.fis.android.twittapp;
 
 import twitter4j.ResponseList;
+import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import android.app.ListActivity;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class TweetsActivity extends ListActivity implements OnClickListener {
 	Button buttonPost;
@@ -36,16 +36,24 @@ public class TweetsActivity extends ListActivity implements OnClickListener {
 			startActivity(new Intent(this, PostActivity.class));
 		}
 
-		if (v.getId() == R.id.buttonPost) {
-			startActivity(new Intent(this, PostActivity.class));
-		}
-
 	}
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		Toast.makeText(getApplicationContext(),
-				"Click ListItem Number " + position, Toast.LENGTH_LONG).show();
+		super.onListItemClick(l, v, position, id);
+		Status status = (Status) listV.getAdapter().getItem(position);
+		
+		
+		
+		Bundle bundle = new Bundle();
+		bundle.putString("param1", status.getText());
+		bundle.putString("param2", status.getUser().getScreenName());
+		bundle.putLong("param3", status.getId());
+		bundle.putLong("param4", status.getInReplyToStatusId());
+
+		Intent newIntent = new Intent(this.getApplicationContext(), RetweetActivity.class);
+		newIntent.putExtras(bundle);
+		startActivityForResult(newIntent, 0);
 
 	}
 
@@ -70,7 +78,7 @@ public class TweetsActivity extends ListActivity implements OnClickListener {
 		}
 
 		protected void onPostExecute(ResponseList<twitter4j.Status> result) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated method stub 
 			super.onPostExecute(result);
 
 			if (result != null) {
